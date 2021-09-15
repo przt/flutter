@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/halaman_profil.dart';
+import 'package:flutter_basic/form_regist.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.indigo),
-      home: MenuProfile(),
+      home: FormRegistration(),
     );
   }
 }
