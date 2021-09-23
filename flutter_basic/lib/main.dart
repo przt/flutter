@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/form_regist.dart';
+import 'package:flutter_basic/home_mbank.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,8 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.indigo),
-      home: FormRegistration(),
+      home: MobileBanking(),
     );
   }
 }
