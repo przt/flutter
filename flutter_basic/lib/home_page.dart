@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/news_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'colors_custom.dart';
 
@@ -13,54 +14,41 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Hellow',
-          style: GoogleFonts.poppins(),
-        ),
-        backgroundColor: deepKomaru,
-      ),
-      body: Card(
-        clipBehavior: Clip.antiAlias,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              ListTile(
-                leading: Icon(Icons.arrow_drop_down_circle),
-                title: const Text('Card title 1'),
-                subtitle: Text(
-                  'Secondary Text',
-                  style: TextStyle(color: Colors.black.withOpacity(0.6)),
+      backgroundColor: carrot,
+      body: Container(
+        margin: EdgeInsets.all(30),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "Selamat Datang di Gits Mobile",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 35,
+                color: Colors.white,
+              ),
+            ),
+            Image.asset('assets/images/dash.png',
+                width: 250, height: 210, fit: BoxFit.fill),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) {
+                  return NewsPage();
+                }));
+              },
+              style: ElevatedButton.styleFrom(
+                primary: belizeHole.withOpacity(.85),
+              ),
+              child: Text(
+                'Mulai',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  'Greyhound divisively hello coldly wonderfully marginally far upon excluding.',
-                  style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                ),
-              ),
-              ButtonBar(
-                alignment: MainAxisAlignment.start,
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      // Perform some action
-                    },
-                    child: const Text('ACTION 1'),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      // Perform some action
-                    },
-                    child: const Text('ACTION 2'),
-                  ),
-                ],
-              ),
-              Image.asset('assets/images/minim2.png'),
-              Image.asset('assets/images/minim2.png'),
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );
