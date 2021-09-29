@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/contact_page.dart';
 import 'package:flutter_basic/news_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'colors_custom.dart';
@@ -35,7 +36,15 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) {
-                  return NewsPage();
+                  return ContactScreen(
+                    contacts: List.generate(
+                      20,
+                      (i) => Contact(
+                        'Name $i',
+                        'A description of what needs to be done for Contact $i',
+                      ),
+                    ),
+                  );
                 }));
               },
               style: ElevatedButton.styleFrom(
