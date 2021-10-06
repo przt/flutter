@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/detail_contact_page.dart';
 
 class Contact {
   final String name;
@@ -31,34 +32,29 @@ class ContactScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(contact: contacts[index]),
+                  builder: (context) => DetailScreen(
+                      title: contacts[index].name,
+                      description: contacts[index].name),
                 ),
               );
             },
           );
         },
       ),
-    );
-  }
-}
-
-class DetailScreen extends StatelessWidget {
-  // In the constructor, require a Todo.
-  const DetailScreen({Key? key, required this.contact}) : super(key: key);
-
-  // Declare a field that holds the Todo.
-  final Contact contact;
-
-  @override
-  Widget build(BuildContext context) {
-    // Use the Todo to create the UI.
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(contact.name),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Text(contact.number),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(title: '', description: ''),
+            ),
+          );
+        },
+        backgroundColor: Colors.white,
+        child: const Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
       ),
     );
   }
