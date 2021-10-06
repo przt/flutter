@@ -12,8 +12,8 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey();
-  final TextEditingController _Title = TextEditingController();
-  final TextEditingController _Description = TextEditingController();
+  final TextEditingController _titleText = TextEditingController();
+  final TextEditingController _descriptionText = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +25,14 @@ class _DetailScreenState extends State<DetailScreen> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(10.0),
               child: Form(
                   key: _formKey,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextFormField(
-                        controller: _Title,
+                        controller: _titleText,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           hintText: widget.title,
@@ -47,7 +47,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                       const SizedBox(height: 10),
                       TextFormField(
-                        controller: _Description,
+                        controller: _descriptionText,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           hintText: widget.description,
